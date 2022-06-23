@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   <title>Job Prediction</title>
+  
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+      body{
+         font-family:Arial, Helvetica, sans-serif;
+         background-color: #F7F7F7;
+      }
+      h1{
+         background-color: #235adc;
+         color: #fff;
+         padding: 10px 0;
+         text-transform: capitalize;
+      }
+      h4{
+         padding: 10px;
+         text-transform: capitalize;
+         color: #F7F7F7;
+         background-color: #235adc;
+         margin-bottom: 10px;
+         border-radius: 5px;
+      }
+
+
+      .container{
+         display: flex;
+         flex-direction: column;
+         height: 90vh;
+         width: 100%;
+         justify-content: center;
+         align-items: center;
+         background-image: url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTI3fHxhaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+         background-position: center center;
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+      form{
+         border: 1px solid #000;
+         border-radius: 5px;
+         padding: 20px;
+         width: 450px;
+         color: #F7F7F7;
+         background-color: #797b7e;
+
+      }
+       .form-group{
+         margin-bottom: 10px;
+       }
+      input,select{
+         width: 100%;
+         padding: 5px;
+      }
+   
+      .btn{
+         border: none;
+         border-radius: 7px;
+         padding: 10px 20px;
+         background-color: #235adc;
+         color: #F7F7F7;
+         font-size: medium;
+         text-transform: uppercase;
+         font-weight: 500;
+         width: 100%;
+         cursor: pointer;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1><div style = "text-align: center">Let's predict whether you will get job or not!!!</div></h1>
+   
+   
+   
+   
+   
+   <div class="container">
+      <h4><div style = "text-align: center">Fill the Following Form to predict the chances of getting job</div></h4>
+     <div class="row">
+     <div class="col-6">
+     
+       
+        <form method="post" action="/predict">
+           <div class="form-group">
+            <label for="gender"><p class="font-weight-bold">Gender:</p></label>
+
+            <select name="gender" id="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            </div>
+            
+            <div class="form-group">
+               <label for="ssc_p"><p class="font-weight-bold">Class 10th Percentage:</p></label>
+               <input type="number" name="ssc_p" min="1" max="100" required>
+            </div>
+            
+            <div class="form-group">
+            <label for="ssc_b"><p class="font-weight-bold">10th Board:</p></label>
+
+            <select name="ssc_b" id="ssc_b">
+              <option value="Central">Central Board</option>
+              <option value="Others">Other Board</option>
+            </select>
+            </div>
+            
+            <div class="form-group">
+               <label for="hsc_p"><p class="font-weight-bold">Class 12th Percentage:</p></label>
+               <input type="number" name="hsc_p" min="1" max="100" required>
+            </div>
+            
+            <div class="form-group">
+            <label for="hsc_b"><p class="font-weight-bold">12th Board:</p></label>
+
+            <select name="hsc_b" id="hsc_b">
+              <option value="Central">Central Board</option>
+              <option value="Others">Other Board</option>
+            </select>
+            </div>
+            
+            <div class="form-group">
+               <label for="degree_p"><p class="font-weight-bold">Graduation Percentage:</p></label>
+               <input type="number" name="degree_p" min="1" max="100" required>
+            </div>
+            
+            <div class="form-group">
+            <label for="degree_t"><p class="font-weight-bold">Graduation Specialization:</p></label>
+
+            <select name="degree_t" id="degree_t">
+              <option value="Comm&Mgmt">Commerce and Management</option>
+              <option value="Sci&Tech">Science and Technology</option>
+              <option value="Others">Others</option>
+            </select>
+            </div>
+            
+         
+                <input class="btn" type="submit" value="submit">
+            
+          
+            </form>
+            
+            
+     
+     </div>
+     </div>
+     </div>
+   
+</body>
+</html>
